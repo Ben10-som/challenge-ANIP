@@ -1,0 +1,79 @@
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+library(haven)
+library(labelled)
+```
+je vais importer les bases de donnees stata
+
+```{r}
+base_individu <- read_dta("../data/ehcvm_individu_ben2021.dta")
+base_menage <- read_dta("../data/ehcvm_menage_ben2021.dta")
+```
+
+```{r}
+str(base_individu)
+```
+
+```{r}
+str(base_menage)
+```
+
+je vais verifier les NA
+```{r}
+base_individu %>%
+  summarise(across(everything(), ~ sum(is.na(.))))
+```
+
+```{r}
+base_individu <- base_individu %>%labelled::to_factor()
+```
+
+```{r}
+view(base_individu)
+```
+
+```{r}
+base_menage <- base_menage %>%labelled::to_factor()
+```
+
+```{r}
+view(base_menage)
+```
+
+```{r}
+write.csv(base_individu, "base_individu.csv", row.names = FALSE)
+```
+
+```{r}
+write.csv(base_menage, "base_menage.csv", row.names = FALSE)
+```
+
+je veux supprimer toutes les variables qui contiennt des NA 
+
+```{r}
+base_individu_clean <- base_individu %>%
+  select(where(~ !any(is.na(.))))
+base_menage_clean <- base_menage %>%
+  select(where(~ !any(is.na(.))))
+```
+
+je veux merger les deux bases de donnees
+
+```{r}
+base_complete <- merge(base_individu_clean, base_menage_clean, by = "hhid")
+```
+
+
+
+
+
+
+
+
+
+
+
