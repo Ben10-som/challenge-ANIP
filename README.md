@@ -1,6 +1,6 @@
-# ANIP Challenge 1 – Visualisation de Données
 
-![Capture d'écran Tableau de bord Power BI](path/to/your/dashboard_screenshot.png)  
+
+![Capture d'écran Tableau de bord Power BI](result.png)  
 *Remplace `path/to/your/dashboard_screenshot.png` par le chemin réel de ton image.*
 
 ## À propos du projet
