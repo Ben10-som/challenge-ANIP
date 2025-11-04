@@ -1,7 +1,7 @@
 
 
 ![Capture d'écran Tableau de bord Power BI](result.png)  
-*Remplace `path/to/your/dashboard_screenshot.png` par le chemin réel de ton image.*
+
 
 ## À propos du projet
 Dans le cadre du **Challenge ANIP – Visualisation de Données**, j’ai participé en tant que **candidat** pour collecter, analyser et valoriser les données démographiques, économiques, sociales et sportives du Bénin.  
